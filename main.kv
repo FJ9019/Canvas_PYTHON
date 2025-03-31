@@ -1,0 +1,54 @@
+CanvasTest:
+
+<MainWidget>:
+    canvas.before:
+        color:
+            rgba: 255, 0, 45,0.5
+        Rectangle:
+            pos: self.pos
+            size: self.size    
+    Slider:
+        id:slide
+        min:0
+        max:200
+        value:50
+        multiline:False
+        height:200
+        orientation:"vertical"
+        pos:(200, 100)
+        disabled:False if switch_.active else True
+
+    Switch:
+        id:switch_
+        pos:(0,150)
+        text:"Toggle Button"
+
+    Label:
+        text:text_.text
+        pos:(200,0)
+        color:"lime"
+        font_size:30
+
+    ProgressBar:
+        min:0
+        max:200
+        width:200
+        pos:(225, 50)
+        value: slide.value
+
+    Label:
+        text : str(round(slide.value))
+        pos: (300, 150) 
+        font_size: 60
+
+    TextInput:
+        id: text_
+        multiline:False
+        width:200
+        height:40    
+
+<CanvasTest>:
+    canvas:
+        Rectangle:
+            pos: 25, 25
+            size: 200, 180
