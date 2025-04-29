@@ -1,9 +1,9 @@
-CanvasTest:
+MainWidget:
 
 <MainWidget>:
     canvas.before:
-        color:
-            rgba: 255, 0, 45,0.5
+        Color:
+            rgba: 255, 255, 0, 0.5
         Rectangle:
             pos: self.pos
             size: self.size    
@@ -49,6 +49,19 @@ CanvasTest:
 
 <CanvasTest>:
     canvas:
-        Rectangle:
-            pos: 25, 25
-            size: 200, 180
+        Color:
+            rgb: 255, 255, 0
+        # Rectangle:
+        #     pos: 25, 25
+        #     size: 350, 175
+        # RoundedRectangle:
+        #     pos: 400, 225
+        #     size: 350, 175
+        # Ellipse:
+        #     pos: 25, 225
+        #     size: 175, 175
+        #     angle_start: 80
+        #     angle_end: -210
+        Line:
+            # points:(15, 15, self.width/2, self.height/2, self.width-15, 15)
+            rounded_rectangle:(15, 15, 350, 175, 50)
